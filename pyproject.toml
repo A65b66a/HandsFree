@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "ai-book-narrator"
+version = "1.0.0"
+description = "Offline document-to-audiobook pipeline with Piper, XTTS v2, and StyleTTS2"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+
+dependencies = [
+    "gradio==4.44.0",
+    "PyMuPDF==1.24.11",
+    "ebooklib==0.18",
+    "beautifulsoup4==4.12.3",
+    "python-docx==1.1.2",
+    "pydub==0.25.1",
+    "numpy==1.26.4",
+    "ffmpeg-python==0.2.0",
+    "requests>=2.31.0",
+    "soundfile",
+    "fastapi<0.116.0",
+    "starlette<1.0.0",
+]
+
+[project.optional-dependencies]
+# Voice cloning via XTTS v2 (CPU)
+xtts = [
+    "TTS==0.22.0",
+]
+# GPU emotion-aware synthesis via StyleTTS2
+styletts2 = [
+    "torch",
+    "torchaudio",
+    "phonemizer",
+    "PyYAML",
+    "munch",
+]
+# Groq emotion tagging
+groq = [
+    "groq>=0.9.0",
+]
+# All optional capabilities
+full = [
+    "ai-book-narrator[xtts,styletts2,groq]",
+]
+# Development tools
+dev = [
+    "pytest>=8.0",
+    "pytest-mock>=3.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
