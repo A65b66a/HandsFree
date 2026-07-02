@@ -22,8 +22,8 @@ env/
 .env
 *.env
 
-# Legacy source directory (runtime data only — not versioned)
-docreader/
+# Runtime assets — populate via scripts/setup.py (not versioned)
+data/
 
 # Generated audio output (temporary)
 *.wav

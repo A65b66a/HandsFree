@@ -22,12 +22,10 @@ from pathlib import Path
 
 # ---------------------------------------------------------------------------
 # Load .env before any module import so GROQ_API_KEY is visible everywhere.
-# Checks project root first; falls back to docreader/ (legacy location).
 # ---------------------------------------------------------------------------
 def _load_dotenv() -> None:
     candidates = [
         Path(__file__).parent / ".env",
-        Path(__file__).parent / "docreader" / ".env",
     ]
     for _env_path in candidates:
         if _env_path.exists():

@@ -1,9 +1,9 @@
 """
 Centralized configuration: runtime paths, Ollama settings, and application limits.
 
-All data assets (Piper, voice models, reference clips, book profiles, library)
-live in the legacy docreader/ directory alongside the original scripts.
-DATA_ROOT points there so modules resolve paths correctly after migration.
+Runtime assets (Piper binary, voice models, book profiles, library data) live in
+data/ at the project root. This directory is gitignored — populate it via
+scripts/setup.py on first run.
 """
 
 from pathlib import Path
@@ -11,7 +11,7 @@ from pathlib import Path
 # ── Project layout ────────────────────────────────────────────────────────────
 
 PROJECT_ROOT = Path(__file__).parent.parent          # d:\book_reader\
-DATA_ROOT    = PROJECT_ROOT / "docreader"            # runtime assets live here
+DATA_ROOT    = PROJECT_ROOT / "data"                 # runtime assets live here
 
 # ── TTS paths ─────────────────────────────────────────────────────────────────
 

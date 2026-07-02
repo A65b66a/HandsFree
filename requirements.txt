@@ -1,0 +1,15 @@
+gradio==4.44.0
+PyMuPDF==1.24.11
+ebooklib==0.18
+beautifulsoup4==4.12.3
+python-docx==1.1.2
+pydub==0.25.1
+numpy==1.26.4
+ffmpeg-python==0.2.0
+requests>=2.31.0
+TTS==0.22.0
+soundfile
+fastapi<0.116.0
+starlette<1.0.0
+groq>=0.9.0
+python-dotenv>=1.0.0
