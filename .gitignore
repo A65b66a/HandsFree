@@ -22,17 +22,12 @@ env/
 .env
 *.env
 
-# TTS runtime assets (large binaries — download via scripts/setup.py)
-docreader/piper/
-docreader/voices/en_US-lessac-medium.onnx
-docreader/voices/en_US-lessac-medium.onnx.json
-docreader/StyleTTS2/
+# Legacy source directory (runtime data only — not versioned)
+docreader/
 
 # Generated audio output (temporary)
 *.wav
 *.zip
-docreader/library_data/
-docreader/book_profiles/
 
 # IDE
 .vscode/
